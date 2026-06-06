@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Don't Waste Food — A PSA</title>
+  <meta name="description" content="Every year, 1.3 billion tonnes of food is wasted while 800 million go hungry. Let's change that.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-clay-blob"></div>
+    <div class="loader-brand">DON'T WASTE FOOD</div>
+    <div class="loader-bar-track">
+      <div id="loader-bar"></div>
+    </div>
+    <div id="loader-percent">0%</div>
+    <p class="loader-sub">Loading the good stuff...</p>
+  </div>
+
+  <!-- FIXED HEADER -->
+  <header class="site-header" id="site-header">
+    <nav>
+      <span class="nav-logo">🍌 DWF</span>
+      <ul class="nav-links">
+        <li><a href="#scroll-container">The Problem</a></li>
+        <li><a href="#cta-section" class="nav-cta">Take Action</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-standalone" id="hero">
+    <div class="hero-blob hero-blob--1"></div>
+    <div class="hero-blob hero-blob--2"></div>
+    <div class="hero-blob hero-blob--3"></div>
+    <div class="hero-grain"></div>
+
+    <div class="hero-inner">
+      <span class="section-label hero-label">✦ A Public Service Announcement ✦</span>
+      <h1 class="hero-heading" aria-label="Don't Waste Food.">
+        <span class="hero-word">DON'T</span>
+        <span class="hero-word">WASTE</span>
+        <span class="hero-word hero-word--accent">FOOD.</span>
+      </h1>
+      <p class="hero-tagline">Your leftovers deserve better.</p>
+    </div>
+
+    <div class="hero-scroll-indicator">
+      <span class="scroll-label">SCROLL</span>
+      <div class="scroll-arrow">
+        <svg width="20" height="28" viewBox="0 0 20 28" fill="none">
+          <line x1="10" y1="0" x2="10" y2="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <polyline points="3,17 10,24 17,17" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- CANVAS (fixed, full-viewport) -->
+  <div class="canvas-wrap" id="canvas-wrap">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <!-- DARK OVERLAY (for stats section) -->
+  <div id="dark-overlay" aria-hidden="true"></div>
+
+  <!-- MARQUEE (fixed bottom strip) -->
+  <div class="marquee-wrap" id="marquee" data-scroll-speed="-22" aria-hidden="true">
+    <div class="marquee-text">
+      WASTE LESS &nbsp;·&nbsp; EAT MORE &nbsp;·&nbsp; LOVE YOUR LEFTOVERS &nbsp;·&nbsp;
+      WASTE LESS &nbsp;·&nbsp; EAT MORE &nbsp;·&nbsp; LOVE YOUR LEFTOVERS &nbsp;·&nbsp;
+      WASTE LESS &nbsp;·&nbsp; EAT MORE &nbsp;·&nbsp; LOVE YOUR LEFTOVERS &nbsp;·&nbsp;
+    </div>
+  </div>
+
+  <!-- SCROLL CONTAINER -->
+  <div id="scroll-container">
+
+    <!-- Section 1: The Problem — slide-left -->
+    <section class="scroll-section section-content align-left"
+             data-enter="8" data-leave="26" data-animation="slide-left">
+      <div class="section-inner">
+        <span class="section-label">001 / The Problem</span>
+        <h2 class="section-heading">A third of all food<br>is wasted.</h2>
+        <p class="section-body">Every year, 1.3 billion tonnes of food ends up in landfills — while 800 million people go hungry. That's not a coincidence. That's a choice.</p>
+      </div>
+    </section>
+
+    <!-- Section 2: The Impact — slide-right -->
+    <section class="scroll-section section-content align-right"
+             data-enter="28" data-leave="44" data-animation="slide-right">
+      <div class="section-inner">
+        <span class="section-label">002 / The Impact</span>
+        <h2 class="section-heading">Food waste is a climate emergency.</h2>
+        <p class="section-body">Rotting food produces methane — a greenhouse gas 80× more potent than CO₂. If food waste were a country, it'd be the world's third-largest emitter.</p>
+      </div>
+    </section>
+
+    <!-- Section 3: At Home — scale-up -->
+    <section class="scroll-section section-content align-left"
+             data-enter="46" data-leave="60" data-animation="scale-up">
+      <div class="section-inner">
+        <span class="section-label">003 / At Home</span>
+        <h2 class="section-heading">It starts in your kitchen.</h2>
+        <p class="section-body">The average household wastes $1,600 in food every year. Plan your meals. Store smarter. Eat what you buy. Simple changes, massive impact.</p>
+      </div>
+    </section>
+
+    <!-- Section 4: Stats — stagger-up with dark overlay -->
+    <section class="scroll-section section-stats"
+             data-enter="62" data-leave="78" data-animation="stagger-up"
+             id="stats-section">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-number-row">
+            <span class="stat-number" data-value="1.3" data-decimals="1">0.0</span>
+            <span class="stat-suffix">B</span>
+          </div>
+          <span class="stat-label">tonnes wasted / year</span>
+        </div>
+        <div class="stat">
+          <div class="stat-number-row">
+            <span class="stat-number" data-value="800" data-decimals="0">0</span>
+            <span class="stat-suffix">M</span>
+          </div>
+          <span class="stat-label">people go hungry</span>
+        </div>
+        <div class="stat">
+          <div class="stat-number-row">
+            <span class="stat-number" data-value="10" data-decimals="0">0</span>
+            <span class="stat-suffix">%</span>
+          </div>
+          <span class="stat-label">of global emissions</span>
+        </div>
+        <div class="stat">
+          <div class="stat-number-row">
+            <span class="stat-suffix stat-suffix--dollar">$</span>
+            <span class="stat-number" data-value="1600" data-decimals="0">0</span>
+          </div>
+          <span class="stat-label">wasted per household / yr</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: CTA — clip-reveal, persist -->
+    <section class="scroll-section section-content align-left section-cta"
+             data-enter="82" data-leave="96" data-animation="clip-reveal"
+             data-persist="true" id="cta-section">
+      <div class="section-inner">
+        <span class="section-label">004 / What You Can Do</span>
+        <h2 class="section-heading">Every meal<br>matters.</h2>
+        <p class="section-body">Plan ahead. Store smart. Compost. Share surplus. Small habits, planet-sized impact.</p>
+        <a href="https://www.unep.org/resources/report/unep-food-waste-index-report-2024"
+           class="cta-button" target="_blank" rel="noopener noreferrer">
+          Learn More →
+        </a>
+      </div>
+    </section>
+
+  </div><!-- #scroll-container -->
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
